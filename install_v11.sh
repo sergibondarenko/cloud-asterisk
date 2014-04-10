@@ -17,8 +17,8 @@ MySQL_USER_FG_PASSWD="04d1f7ae0e925eec6259332ea5c6e410"
 PHP_AGI_PASSWD="FJdY6GnYtd33Nc2"
 
 #Install Tel-REX web interface
-tar -xvf telrex.tar.gz
-mkdir /var/www/telrex
+#tar -xvf telrex.tar.gz
+#mkdir /var/www/telrex
 cp -r telrex/* /var/www/telrex/
 #rm -rf telrex
 

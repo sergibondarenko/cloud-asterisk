@@ -1,1 +1,7 @@
-hello
+To install Cloud Asterisk
+
+1. Run upgrade_linux.sh
+2. Answer all questions asked
+3. Run install_v11.sh
+4. Answer all questions asked
+5. Reboot the system 
