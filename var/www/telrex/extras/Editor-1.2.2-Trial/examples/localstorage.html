@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+		
+		<title>DataTables Editor example</title>
+		<style class="include" type="text/css">
+			@import "../../../media/css/jquery.dataTables.css";
+			@import "../../TableTools/media/css/TableTools.css";
+			@import "../media/css/dataTables.editor.css";
+		</style>
+		<script class="include" type="text/javascript" charset="utf-8" src="../../../media/js/jquery.js"></script>
+		<script class="include" type="text/javascript" charset="utf-8" src="../../../media/js/jquery.dataTables.js"></script>
+		<script class="include" type="text/javascript" charset="utf-8" src="../../TableTools/media/js/TableTools.js"></script>
+		<script class="include" type="text/javascript" charset="utf-8" src="../media/js/dataTables.editor.js"></script>
+		<script type="text/javascript" charset="utf-8" id="init-code">
+			var editor; // use a global for the submit and return data rendering in the examples
+
+			$(document).ready(function() {
+				// Create or update the todo localStorage entry
+				if ( !localStorage.getItem('datatable_todo') ) {
+					localStorage.setItem('datatable_todo', '[]');
+				}
+				else {
+					// Loop over the array, removing any nulls from previous deletes on init
+					var a = JSON.parse( localStorage.getItem('datatable_todo') );
+					for ( var i=a.length-1 ; i>=0 ; i-- ) {
+						if ( a[i] === null ) {
+							a.splice( i, 1 );
+						}
+					}
+					localStorage.setItem('datatable_todo', JSON.stringify(a));
+				}
+
+				// Set up the editor
+				editor = new $.fn.dataTable.Editor( {
+					"domTable": "#example",
+					"fields": [ {
+							"label": "Item:",
+							"name": "item"
+						}, {
+							"label": "Status:",
+							"name": "status",
+							"type": "select",
+							"ipOpts": [
+								{ "label": "To do", "value": "To do" },
+								{ "label": "Done", "value": "Done" }
+							]
+						}
+					],
+					"ajax": function ( method, url, data, successCallback, errorCallback ) {
+						var id = null;
+						var store = JSON.parse( localStorage.getItem('datatable_todo') );
+
+						if ( data.action === 'create' ) {
+							store.push( {
+								"DT_RowId": 'row_'+store.length,
+								"item": data.data.item,
+								"status": data.data.status
+							} );
+							id = 'row_'+(store.length-1);
+						}
+						else if ( data.action === 'edit' ) {
+							var index = findIndex( store, data.id );
+							store[index].item = data.data.item;
+							store[index].status = data.data.status;
+							id = data.id;
+						}
+						else if ( data.action === 'remove' ) {
+							for ( var i=0, iLen=data.data.length ; i<iLen ; i++ ) {
+								var index = findIndex( store, data.data[i] );
+								store[index] = null; // Don't upset the indexes
+							}
+						}
+
+						localStorage.setItem('datatable_todo', JSON.stringify(store));
+						successCallback( {"id": id} );
+					}
+				} );
+
+				// Initialise the DataTable
+				$('#example').dataTable( {
+					"sDom": "Tfrtip",
+					"aaData": JSON.parse( localStorage.getItem('datatable_todo') ),
+					"aoColumns": [
+						{ "mData": "item" },
+						{ "mData": "status" }
+					],
+					"oTableTools": {
+						"sRowSelect": "multi",
+						"aButtons": [
+							{ "sExtends": "editor_create", "editor": editor },
+							{ "sExtends": "editor_edit",   "editor": editor },
+							{ "sExtends": "editor_remove", "editor": editor }
+						]
+					}
+				} );
+			} );
+
+			function findIndex( store, id ) {
+				for ( var i=0, iLen=store.length ; i<iLen ; i++ ) {
+					if ( store[i].DT_RowId === 'row_'+i ) {
+						return i;
+					}
+				}
+				return -1;
+			}
+		</script>
+
+
+		<!-- Includes required for the example page's behaviour - not needed for Editor itself -->
+		<style type="text/css">
+			@import "support/examples.css";
+			@import "../../../media/css/demo_page.css";
+			@import "../../../examples/examples_support/syntax/css/shCore.css";
+		</style>
+		<script type="text/javascript" language="javascript" src="../../../examples/examples_support/syntax/js/shCore.js"></script>
+		<script type="text/javascript" language="javascript" src="support/examples.js"></script>
+	</head>
+	<body id="dt_example">
+		<div id="container">
+			<div class="full_width big">
+				DataTables Editor - localStorage
+			</div>
+			
+			<p>This example shows how the <a href="../docs/Editor.defaults.html#ajax">ajax</a> initialisation option can be used to replace the default Ajax call that Editor makes and instead use the browser's localStorage abilities to save the state of the table locally on the browser. This means that the user effectively has persistent storage, but it is available only to them on their current browser.</p>
+			<p>The code in this example shows the <a href="../docs/Editor.defaults.html#ajax">ajax</a> option as a function that effectively implements everything that is required by Editor for data storage and retrieval. The 'create', 'edit' and 'remove' actions are each handled by manipulating the JSON data array that is stored in the browser's localStorage.</p>
+			
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
+	<thead>
+		<tr>
+			<th>To do item</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<th>To do item</th>
+			<th>Status</th>
+		</tr>
+	</tfoot>
+</table>
+			</div>
+			<div class="spacer"></div>
+			
+
+			<ul class="tabs">
+				<li class="active">Javascript</li>
+				<li>HTML</li>
+				<li>PHP</li>
+				<li>Includes</li>
+				<li>Ajax data</li>
+				<li>Ajax load</li>
+			</ul>
+
+			<div class="tabs">
+				<div>
+					<h1>Initialisation code</h1>
+					<p>The Javascript below is what is used on this page for the example shown.</p>
+
+					<pre id="display-init-code" class="brush: js;"></pre>
+				</div>
+				<div>
+					<h1>Table HTML</h1>
+					<p>The HTML shown below shows the <code>TABLE</code> that is used in this example.</p>
+					
+					<script type="text/javascript">
+						window._table = document.getElementById('demo').innerHTML;
+					</script>
+					<pre id="display-init-html" class="brush: html;"></pre>
+				</div>
+				<div>
+					<h1>Server-side PHP</h1>
+					<p>The code below is that HTML that is used to drive the server-side section of this exampe.</p>
+					
+					<pre id="display-init-php" class="brush: php;"></pre>
+				</div>
+				<div>
+					<h1>Included media files:</h1>
+					<p>The HTML shown below includes the Javascript and CSS files that are required for the Editor operation on this page. You can use this as a template for your own pages, but if you move the files you might need to update the paths.</p>
+
+					<pre id="display-init-inc" class="brush: html;"></pre>
+				</div>
+				<div>
+					<h1>Communication of Editor between the client and server:</h1>
+					<p>Editor submits and retrieves information by Ajax requests. The two blocks below show the data that Editor submits and receives, to and from the server. This is updated live as you interact with Editor so you can see what is submitted.</p>
+
+					<div style="float:left; width:48%">
+						<h1>Submitted data:</h1>
+						<p>The following shows the data that has been submitted to the server when a request is made to add, edit or delete data from the table.</p>
+						<pre id="submitted_data" class="brush: js;">// No data yet submitted</pre>
+					</div>
+					<div style="float:right; width:48%">
+						<h1>Server response:</h1>
+						<p>The following shows the data that has been returned by the server in response to the data submitted on the left and is then acted upon.</p>
+						<pre id="response" class="brush: js;">// No data yet received</pre>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+				<div>
+					<h1>Data for DataTables from server:</h1>
+					<p>DataTables can request information to display from the server when the page first loads. The block below shows the response from the server.</p>
+
+					<pre id="dtxhr" class="brush: js;"></pre>
+				</div>
+			</div>
+
+
+			<h1>Examples</h1>
+			<div class="examples" style="float:left; width:50%">
+				Basic:
+				<ul>
+					<li><a href="index.html">Basic initialisation</a></li>
+					<li><a href="fieldDefaults.html">Setting defaults</a></li>
+					<li><a href="fieldTypes.html">Using different field input types</a></li>
+					<li><a href="dates.html">Date input fields</a></li>
+					<li><a href="envelope_buttons.html">Envelope display controller</a></li>
+					<li><a href="htmlTable.php">DOM sourced table</a> (not Ajax)</li>
+					<li><a href="inlineControls.html">Inline edit and delete controls</a></li>
+					<li><a href="REST.html">REST interface</a></li>
+					<li><a href="stackedInputs.html">Styling the form for stacked inputs</a></li>
+					<li><a href="bootstrap.html">Styling using Twitter Bootstrap</a></li>
+					<li><a href="server-side-processing.html">Server-side processing for large data sets</a></li>
+					<li><a href="i18n.html">Internationalisation</a></li>
+				</ul>
+			</div>
+			<div class="examples" style="float:right; width:50%">
+				Advanced:
+				<ul>
+					<li><a href="join.html">Joined tables</a> - working with multiple SQL tables</li>
+					<li><a href="joinSelf.html">Self referencing join tables</a></li>
+					<li><a href="deepObjects.html">JSON feeds with nested values</a></li>
+					<li><a href="events_keySubmit.html">Using events</a> - submit on return and close on escape</li>
+					<li><a href="clientValidation.html">Client-side validation</a></li>
+					<li><a href="envelope_inline.html">Envelope display controller with inline controls</a></li>
+					<li><a href="back-next.html">Previous and next save buttons</a></li>
+					<li><a href="formOnlyData.html">Data shown only in the form</a></li>
+					<li><a href="tableOnlyData.html">Data shown only in the DataTable</a></li>
+					<li><a href="tableFormatting.html">Formatting data especially for the DataTable</a></li>
+					<li><a href="localstorage.html">Ajax override</a> - using localStorage for the data source</li>
+					<li><a href="fieldPlugin.html">Plug-in field types</a></li>
+				</ul>
+			</div>
+			
+			
+			<div id="footer" class="clear" style="text-align:center; padding-top: 2em;">
+				<p>
+					Please refer to the <a href="http://editor.datatables.net">DataTables Editor documentation</a> for full information<br>
+					about the initialisation options, API properties and methods.
+				</p>
+				
+				<span style="font-size:10px;">
+					<a href="http://datatables.net">DataTables</a> and 
+					<a href="http://editor.datatables.net">DataTables Editor</a>
+					designed and created by <a href="http://www.sprymedia.co.uk">SpryMedia</a> &copy; 2012
+				</span>
+			</div>
+		</div>
+	</body>
+</html>

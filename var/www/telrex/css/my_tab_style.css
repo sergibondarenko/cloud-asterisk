@@ -1,0 +1,66 @@
+ .sunny, .cloudy, .rainy {
+            display: inline-block;
+            margin: 20px 0 20px 10px;
+            width: 128px;
+            height: 628px;
+            
+        }
+
+        .cloudy{
+            background-position: -128px 0;
+        }
+
+        .rainy{
+            background-position: -256px 0;
+        }
+
+        .weather {
+            width: 660px;
+            padding: 40px 0 0 0;
+            float: left;
+        }
+
+        #keyboard-nav
+        {
+            padding-top: 35px;
+        }
+        
+        
+    /*  #tabstrip 
+    {
+        width: 320px;
+        float: right;
+        margin-bottom: 20px;
+    }*/
+    /* //Scrolling */
+    #tabstrip .k-content 
+    {
+    	height: 420px;
+    	overflow: auto;
+    }
+ /*   .specification {
+        max-width: 670px;
+        margin: 10px 0;
+        padding: 0;
+    }
+    .specification dt, dd {
+        width: 140px;
+        float: left;
+        margin: 0;
+        padding: 5px 0 7px 0;
+        border-top: 1px solid rgba(0,0,0,0.3);
+    }
+    .specification dt {
+        clear: left;
+        width: 120px;
+        margin-right: 7px;
+        padding-right: 0;
+        text-align: right;
+        opacity: 0.7;
+    }
+    .specification:after, .wrapper:after {
+        content: ".";
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;*/

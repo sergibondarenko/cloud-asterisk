@@ -1,0 +1,1 @@
+<?php echo '{ "sError": "The Join class is not available in the trial version of Editor. A license for Editor, including full source, can be purchased from http://editor.datatables.net ."}'; exit(0); 

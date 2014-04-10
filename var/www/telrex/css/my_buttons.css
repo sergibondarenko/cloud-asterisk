@@ -1,0 +1,133 @@
+/* 
+    Document   : my_buttons
+    Created on : Mar 31, 2013, 8:16:02 PM
+    Author     : sergeybondarenko
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+/*
+.classname {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.classname:active {
+	position:relative;
+	top:1px;
+}*/
+
+/*save button css*/
+.savebut {
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	/*background-color:#77d42a;*/
+	background-color:#8588b0;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	cursor: pointer;
+	/*border:1px solid #268a16;*/
+	border: 1px solid #555a91;
+	display:inline-block;
+	/*color:#306108;*/
+	color: #fff;
+	/*font-family:arial;*/
+	font-family: 'Bree Serif', serif;
+	font-size:14px;
+	/*font-weight:bold;*/
+	font-weight: 300;
+	padding:5px 12px;
+	text-decoration:none;
+	/*text-shadow:1px 1px 0px #aade7c;*/
+	text-shadow: 0px 1px 0 rgba(0,0,0,0.25);
+	
+	box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+	-moz-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+	-webkit-box-shadow: inset 0 0 2px rgba(256,256,256,0.75);
+}.savebut:hover {
+	/*background-color:#5cb811;*/
+	background: #484d96;
+        border: 1px solid rgba(256,256,256,0.75);
+        
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}.savebut:active {
+	position:relative;
+	top:1px;
+}
+
+.redbut {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f29c93;
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background-color:#fe1a00;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	border:1px solid #d83526;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:5px 12px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #b23e35;
+}.redbut:hover {
+	background-color:#ce0100;
+}.redbut:active {
+	position:relative;
+	top:1px;
+}
+
+
+.sgreenbut {
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	/*background-color:#77d42a;*/
+        background-color:#bfe69c;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	border:1px solid #268a16;
+	display:inline-block;
+	color:#306108;
+	font-family:arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:5px 12px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #aade7c;
+}.sgreenbut:hover {
+	background-color:#5cb811;
+}.sgreenbut:active {
+	position:relative;
+	top:1px;
+}

@@ -1,0 +1,334 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>FileGator - Powerful PHP File-Manager and AJAX Uploader</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="alcalbg">
+	<meta name="copyright" content="alcalbg">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2013-07-04T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	<link rel="stylesheet" href="assets/css/custom.css" media="screen">
+
+	
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/cufon.js"></script><script src="assets/js/font.js"></script><script>Cufon.replace("h1, h2, h3, h4, h5, h6");</script>
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='450',easing='easeOutExpo';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#F3F3F3;color:#585858;background-image:url(assets/images/image_2.png);background-repeat:repeat;background-attachment:fixed;}
+		::-moz-selection{background:#111111;color:#F1F1F1;}
+		::selection{background:#111111;color:#F1F1F1;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#111111;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #, #);
+			  background-image: -ms-linear-gradient(top, #, #);
+			  background-image: -webkit-gradient(linear, 0 0, 0 %, from(#333333), to(#));
+			  background-image: -webkit-linear-gradient(top, #, #);
+			  background-image: -o-linear-gradient(top, #, #);
+			  background-image: linear-gradient(top, #, #);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#', endColorstr='#', GradientType=0);
+			  border-color: # # #bfbfbf;
+			  color:#;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: # # #bfbfbf;
+		  background-color: #;
+		}
+		hr{border-top:1px solid #E5E5E5;border-bottom:1px solid #F9F9F9;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#333333;color:#F1F1F1;http://static.revaxarts-themes.com/noise.gif}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #444444;-moz-text-shadow:1px 1px 0px #444444;text-shadow:1px 1px 0px #444444;}
+		#documenter_sidebar ul{border-top:1px solid #222222;}
+		#documenter_sidebar ul a{border-top:1px solid #444444;border-bottom:1px solid #222222;color:#F1F1F1;}
+		#documenter_sidebar ul a:hover{background:#111111;color:#F1F1F1;border-top:1px solid #111111;}
+		#documenter_sidebar ul a.current{background:#111111;color:#F1F1F1;border-top:1px solid #111111;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-filegator">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#what_is_filegator" title="What is FileGator?">What is FileGator?</a></li>
+			<li><a href="#features" title="Features">Features</a></li>
+			<li><a href="#installation" title="Installation">Installation</a></li>
+			<li><a href="#configuring_filegator" title="Configuring FileGator">Configuring FileGator</a></li>
+			<li><a href="#compatibility" title="Compatibility">Compatibility</a></li>
+			<li><a href="#faq" title="FAQ">FAQ</a></li>
+			<li><a href="#credits" title="Credits">Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright alcalbg 2013<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>FileGator</h1>
+	<h2>Powerful PHP File-Manager and AJAX Uploader</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 09/19/2012</li>
+	<li>latest update: 07/04/2013</li>
+	<li>by: alcalbg</li>
+	<li><a href=""></a></li>
+	<li>email: <a href="mailto:&#105;&#110;&#102;&#111;&#64;&#102;&#105;&#108;&#101;&#45;&#103;&#97;&#116;&#111;&#114;&#46;&#99;&#111;&#109;">&#105;&#110;&#102;&#111;&#64;&#102;&#105;&#108;&#101;&#45;&#103;&#97;&#116;&#111;&#114;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p></p>
+	</section>
+	
+	<section id="what_is_filegator">
+	<div class="page-header"><h3>What is FileGator?</h3><hr class="notop"></div>
+<h2>
+	FileGator is Powerful PHP File-Manager and AJAX Uploader.</h2>
+<p>
+	For more info please visit gator&#39;s web page<a href="http://www.file-gator.com" target="_blank"> www.file-gator.com</a></p>
+<p>
+	&nbsp;</p>
+<h4 id="what_is_filegator_liability">Liability</h4>
+<p>
+	We cannot guarantee that this software will run in every environment or together with any other application, without producing errors.&nbsp;Any liability for damage of any sort is hereby denied.&nbsp;<em style="font-style: normal; color: rgb(0, 0, 0); font-family: arial, sans-serif; font-size: small; line-height: 16px; ">You are solely responsible for your files, server and data</em></p>
+<div>
+	Please evaluate this software with non-critical data before use.</div>
+<div>
+	&nbsp;</div>
+<h4 id="what_is_filegator_copyright">Copyright</h4>
+<p>
+	Designed &amp; developed by alcalbg. Logo design by batabarata.</p>
+<p>
+	This software uses open-source plugins blueimp, foundation, lightbox and jquery.</p>
+<div>
+	Copyright &copy; 2011-2013 by interactive32. All right reserved.</div>
+</section>
+<section id="features">
+	<div class="page-header"><h3>Features</h3><hr class="notop"></div>
+<h2>
+	Main Features:</h2>
+<ul>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Upload multiple files with Ajax and manage them online</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Copy, move, rename, create, edit or delete online files and folders</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Create archives with zip or unzip and decompress files online</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Hierarchical Treeview</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Search files and folders</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Preview images in gallery mode</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Multiple user accounts + guest account</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Adjustable read/write/upload permissions for each user</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Home directories for each user or default directory if not specified</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Admin interface for user management</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Nice user-friendly fluid interface</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		No database required, flash free</li>
+	<li style="margin: 0px 0px 0px 36px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-size: 12px; font-family: inherit; vertical-align: baseline; list-style: square; ">
+		Highly configurable</li>
+</ul>
+<p>
+	&nbsp;</p>
+<h4 id="features_main_screen_explained">Main Screen Explained:</h4>
+<p>
+	1. - Sign in / Sign out links</p>
+<p>
+	2. - Upload one or more Files. Or you can drag&amp;drop into the browser but not in IE</p>
+<p>
+	3. - Create new Folder or create new File</p>
+<p>
+	4. - <strong>Preview images</strong> (only active on folders with images), open <strong>Tree view</strong> and <strong>Filter Files</strong> by filename options</p>
+<p>
+	5. - File properties and options (download, rename, unzip, edit)</p>
+<p>
+	6. - Go back to parent folder</p>
+<p>
+	7. - Sort Files and invert sort</p>
+<p>
+	8a. - Select Files and Folders</p>
+<p>
+	8b. - Copy, Move, Delete or Zip selected Files and Folders</p>
+<p>
+	&nbsp;</p>
+<p>
+	<img alt="" src="assets/images/image_1.png" style="width: 817px; height: 610px; border-width: 0px; border-style: solid;"></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<h2>
+	The installation of FileGator is very simple:</h2>
+<p>
+	- Make sure you have minimum PHP 5.2 + Apache2 on you server</p>
+<p>
+	- Copy all files to your server using FTP or similar tool</p>
+<p>
+	- Make sure Apache service has read/write access to the config/ and repository/ folder(s). Consult your system administrator about this.&nbsp;</p>
+<p>
+	- Point your browser to filegator folder&nbsp; (example: http://yourserver.com/filegator)</p>
+<p>
+	- Sign in as admin/admin123 to admin interface (username:&nbsp; admin&nbsp; password:&nbsp; admin123)</p>
+<p>
+	- Change admin password by clicking on gears icon next to admin account</p>
+<p>
+	- Create one or more user accounts</p>
+<p>
+	- Sign out of admin interface and Sign in as regular user to test filegator</p>
+<p>
+	&nbsp;</p>
+<h2>
+	Additional Notes:</h2>
+<p>
+	- Beware who you give access and writing permissions since users can gain full acces to your server.&nbsp;<em style="font-weight: bold; font-style: normal; color: rgb(0, 0, 0); font-family: arial, sans-serif; font-size: small; line-height: 16px; ">You are solely responsible for your files, server and data.</em></p>
+<p>
+	-&nbsp;Current .htaccess file inside repository directory will prevent script and html execution inside that directory.&nbsp;You may need to adjust this to fit your needs.&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="configuring_filegator">
+	<div class="page-header"><h3>Configuring FileGator</h3><hr class="notop"></div>
+<h2>
+	You can set all configuration options by editing the<strong>&nbsp;index.php</strong>&nbsp;file.</h2>
+<p>
+	All configuration options begins with explanation so read them carefully.&nbsp;</p>
+<p>
+	Configuration options are inside single array so you must be careful not to break the array structure. Some options can include sub-arrays.</p>
+<p>
+	NOTE: You may need to logout/login for some changes to take effect</p>
+<div>
+	&nbsp;</div>
+</section>
+<section id="compatibility">
+	<div class="page-header"><h3>Compatibility</h3><hr class="notop"></div>
+<h2>
+	FileGator is tested and found compatibile with:</h2>
+<p>
+	&nbsp;</p>
+<h4 id="compatibility_browsers">Browsers</h4>
+<ul>
+	<li>
+		Microsoft Internet Explorer version 7, 8, 9 and 10</li>
+	<li>
+		Firefox</li>
+	<li>
+		Google Chrome</li>
+	<li>
+		Safari</li>
+</ul>
+<p>
+	&nbsp;</p>
+<h4 id="compatibility_server_versions">Server Versions</h4>
+<ul>
+	<li>
+		Minimum PHP 5.2 + Apache2</li>
+</ul>
+<p>
+	&nbsp;</p>
+<h4 id="compatibility_operating_systems">Operating Systems</h4>
+<ul>
+	<li>
+		Windows &nbsp;(Tested with NTFS / Windows NT 6.1 build 7600 aka Windows 7)</li>
+	<li>
+		Linux (CentOS 2.6)</li>
+</ul>
+<p>
+	(Tested on x86 and x86_64 platforms)</p>
+<p>
+	&nbsp;</p>
+<p>
+	* Some features like drag&amp;drop, upload in chunks and realtime progress bar will not be available in some IE versions</p>
+<p>
+	** Widows NTFS filesystem (and some linux distros) has PHP restrictions when using special characters and encodings for filenames. For example it has been reported that Greek letters are not displayed correctly on Windows NTFS + FileGator.</p>
+<p>
+	*** FileGator will work on Microsoft IIS and Nginx but these web servers are not fully supported and these setups may not be secure enough!</p>
+</section>
+<section id="faq">
+	<div class="page-header"><h3>FAQ</h3><hr class="notop"></div>
+<h4 id="faq_latest_faq_is_located_here_nbspa_href"http_codecanyonnet_item_filegator_3041013_support"http_codecanyonnet_item_filegator_3041013_support_a">Latest FAQ is located here:&nbsp;<a href="http://codecanyon.net/item/filegator/3041013/support">http://codecanyon.net/item/filegator/3041013/support</a></h4>
+<p>
+	&nbsp;</p>
+<h2>
+	How can I increase maximum upload file size?</h2>
+<p>
+	<br>
+	This is controlled by web server and PHP settings inside php.ini file.<br>
+	<br>
+	Follow these steps to increase maximum upload file size to 200MB:<br>
+	<br>
+	1. Locate your php.ini file. On windows look into c:/Program Files/php/ or c:/xampp/apache/bin/ or simply search for php.ini. Sometimes there are two or more php.ini files (on some xampp installations) so you must figure out which one is used.<br>
+	<br>
+	2. Inside php.ini file set parameters to something similar:</p>
+<pre>
+upload_max_filesize = 200M ;this is 200 Megabytes
+post_max_size = 205M ;this must be greater then upload_max_filesize
+</pre>
+<p>
+	<br>
+	3. Restart your web server to apply new settings. Don&rsquo;t forget this!<br>
+	<br>
+	4. Change FileGator index.php config file around line 78:</p>
+<pre>
+&#39;max_filesize&#39; =&gt; 209715200, // This is 200 Megabytes
+</pre>
+<p>
+	<br>
+	5. Refresh page in your browser and you&rsquo;re done.<br>
+	<br>
+	Here is a good link to explain this more deeply.<br>
+	<br>
+	<a href="http://www.radinks.com/upload/config.php">http://www.radinks.com/upload/config.php</a><br>
+	<br>
+	Note: If you don&rsquo;t have your own server consult your hosting provider about this.</p>
+</section>
+<section id="credits">
+	<div class="page-header"><h3>Credits</h3><hr class="notop"></div>
+<h3>
+	&nbsp;</h3>
+<h4 id="credits_thanks_so_much_to">Thanks so much to:</h4>
+<p>
+	<strong>batabarata</strong> for logo design</p>
+<p>
+	&nbsp;</p>
+<h4 id="credits_thanks_to_open_source_guys_at">Thanks to open-source guys at:</h4>
+<p>
+	blueimp, foundation, phpmailer, lightbox and jquery</p>
+</section>
+
+	</div>
+</body>
+</html>
